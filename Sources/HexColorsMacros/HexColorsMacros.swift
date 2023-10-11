@@ -11,8 +11,9 @@ import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
 @main
-struct HEXPlugin: CompilerPlugin {
-    let providingMacros: [Macro.Type] = [
+struct HexColorPlugin: CompilerPlugin {
+    
+    public let providingMacros: [Macro.Type] = [
         ColorHexMacro.self,
         UIColorHexMacro.self,
         NSColorHexMacro.self,
