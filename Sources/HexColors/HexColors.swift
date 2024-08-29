@@ -21,7 +21,7 @@ public macro uiColor(_ stringLiteral: StringLiteralType ) -> UIColor = #external
 public macro uiColor(_ hexadecimalIntegerLiteral: IntegerLiteralType ) -> UIColor = #externalMacro(module: "HexColorsMacros", type: "UIColorHexMacro")
 #endif
 
-#if canImport(AppKit)
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 
 @freestanding(expression)
