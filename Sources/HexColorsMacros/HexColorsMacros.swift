@@ -42,7 +42,7 @@ public struct HexIntExpressionMacro: ExpressionMacro {
     
     public static func expansion(of node: some SwiftSyntax.FreestandingMacroExpansionSyntax, in context: some SwiftSyntaxMacros.MacroExpansionContext) throws -> SwiftSyntax.ExprSyntax {
         guard
-            let argument = node.argumentList.first?.expression,
+            let argument = node.arguments.first?.expression,
             let integerLiteral: TokenSyntax = argument.as(IntegerLiteralExprSyntax.self)?.literal
         else {
             fatalError("compiler bug: macro needs an integer literal")
@@ -79,7 +79,7 @@ extension HexExpressionMacro {
         in context: some SwiftSyntaxMacros.MacroExpansionContext
     ) throws -> SwiftSyntax.ExprSyntax {
     
-        guard let argument = node.argumentList.first?.expression else {
+        guard let argument = node.arguments.first?.expression else {
             fatalError("compiler bug: macro needs one argument")
         }
         

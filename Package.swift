@@ -6,7 +6,7 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "HexColors",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13) ],
+    platforms: [.macOS(.v10_15), .iOS(.v17), .tvOS(.v17), .watchOS(.v6), .macCatalyst(.v17) ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -15,8 +15,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        // Depend on the Swift 5.9 release of SwiftSyntax
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "603.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
